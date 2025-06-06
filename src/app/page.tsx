@@ -1,12 +1,14 @@
 import Image from "next/image";
-import LinksSidebar from "@/components/linksSidebar";
+import LinksSidebar from "@/components/linksSidebar/linksSidebar";
 import ProfileIntro from "@/components/ProfileIntro";
-import Analysis from "@/components/anaysis";
+import Analysis from "@/components/analysis";
 import Post from "@/components/post";
-import CreatePost from "@/components/CreatePost";
+import CreatePost from "@/components/CreatePost/CreatePost";
 import styles from "@/styles/page.module.css";
+import Linksidebar from "@/components/linksSidebar/linksSidebar.module.css";
 import NewsCard from "@/components/NewsCard";
 import Header from "@/components/header";
+import linksSidebar from "@/components/linksSidebar/linksSidebar";
 
 export default function Home() {
   return (
@@ -14,27 +16,19 @@ export default function Home() {
       {" "}
       <Header />
       <div className={styles.container}>
-        <div className={styles.sidebar}>
+        <div className={Linksidebar.Leftsidebar}>
           <ProfileIntro />
+          <Analysis />
 
-          <div className={styles.card}>
-            <Analysis />
-          </div>
-          <div className={styles.card}>
-            <LinksSidebar />
-          </div>
+          <LinksSidebar />
         </div>
 
         <div className={styles.mainFeed}>
-          <div className={styles.card}>
-            <CreatePost />
-          </div>
+          <CreatePost />
           <Post />
         </div>
         <div className={styles.sidebar}>
-          <div className={styles.card}>
-            <NewsCard />
-          </div>
+          <NewsCard />
         </div>
       </div>
     </>

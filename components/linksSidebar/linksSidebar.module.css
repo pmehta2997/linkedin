@@ -1,0 +1,73 @@
+.Leftsidebar {
+    width: 25%;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.Leftsidebarlinkitem {
+    font-size: 0.9rem;
+    color: #374151;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.Leftsidebarlinkitem:hover {
+    text-decoration: underline;
+    color: #2563eb;
+
+}
+@media screen and (max-width: 768px) {
+    .rightIcons {
+        display: none;
+    }
+    .container {
+       padding:0;
+    }
+    .hamburger {
+        display: block;
+        margin-left: 1rem;
+    }
+
+    .searchInput {
+        display: none;
+    }
+.sicon{
+    display: none;
+}
+    .searchicon {
+        display: block;
+    }
+
+    .mainFeed {
+        width: 100%;
+    }
+
+}
+@media screen and (max-width:412px){
+     .rightIcons {
+        display: none;
+    }
+    .container {
+       padding:0;
+    }
+    .hamburger {
+        display: block;
+        margin-left: 1rem;
+    }
+.Leftsidebar{
+    display: none;
+}
+    .searchInput {
+        display: none;
+    }
+
+    .searchicon {
+        display: block;
+    }
+
+    .mainFeed {
+        width: 100%;
+    }
+
+}

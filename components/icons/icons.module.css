@@ -1,0 +1,10 @@
+.icon {
+    margin-right: 5px;
+    font-size:xx-large;
+}
+
+@media screen and (max-width: 768px) {
+    .icon{
+         font-size: large;
+    }
+}
