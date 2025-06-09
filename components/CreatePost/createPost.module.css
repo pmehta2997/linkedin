@@ -2,17 +2,18 @@
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 16px;
+    padding: 10px;
     margin-bottom: 16px;
 }
 
 .postInput {
     width: 100%;
     padding: 10px;
-    border: 1px solid #d1d5db;
-    /* Tailwind's gray-300 */
-    border-radius: 6px;
-    font-size: 14px;
+    border: 1px solid gray;
+    border-radius: 30px;
+    font-size: 16px;
+    line-height: 2;
+    margin-left: 0.5rem;
 }
 
 .buttonGroup {
@@ -21,7 +22,9 @@
     margin-top: 12px;
     justify-content: space-around;
 }
-
+.buttonGroup button FaVideo{
+    color: green;
+}
 .buttonGroup button {
     background: none;
     border: none;
@@ -32,4 +35,20 @@
 .profileInput{
     display: flex;
     align-items: center;
+}
+.profileImage{
+    width: 80;
+     height: 70;
+     border-radius: 50%;
+    padding:3px 5px;
+}
+.iconText{
+    margin-left: 0.8rem;
+    font-size: 18px;
+}
+.icon{
+    font-size: 1.5rem;
+}
+.button{
+    display: flex;
 }

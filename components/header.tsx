@@ -68,24 +68,25 @@ export default function Header() {
       </div>
 
       <nav className={styles.nav}>
-        <div className={`${styles.navItem} ${styles.active}`}>
+        <a href="#" className={`${styles.navItem} ${styles.active}`}>
           <Icon>
             <IoHome />
           </Icon>
           Home
-        </div>
-        <div className={styles.navItem}>
+        </a>
+
+        <a className={styles.navItem}>
           <Icon>
             <FaUserFriends />
           </Icon>
           My Network
-        </div>
-        <div className={styles.navItem}>
+        </a>
+        <a className={styles.navItem}>
           <Icon>
             <GiHandBag />
           </Icon>
           <span> Jobs</span>
-        </div>
+        </a>
 
         <div
           className={styles.hamburger}
@@ -96,13 +97,13 @@ export default function Header() {
 
         {isMenuOpen && (
           <div className={Dropdownstyle.dropdownMenu}>
-            <div className={styles.navItem}>
+            <a className={styles.navItem}>
               <img
                 src={profilepic.src}
                 alt="Me"
                 style={{ width: 24, height: 24, borderRadius: "50%" }}
               />
-            </div>
+            </a>
             <div className={styles.navItem}>
               <Icon>
                 <BiBorderNone />
@@ -112,27 +113,27 @@ export default function Header() {
         )}
 
         <div className={styles.rightIcons}>
-          <div className={styles.navItem}>
+          <a className={styles.navItem}>
             <Icon>
               <AiOutlineMessage />
             </Icon>
             Messaging
-          </div>
-          <div className={styles.navItem}>
+          </a>
+          <a className={styles.navItem}>
             <Icon>
               <FaBell />
             </Icon>
             Notifications
-          </div>
-          <div className={styles.navItem}>
+          </a>
+          <a className={styles.navItem}>
             <img
               src={profilepic.src}
               alt="Me"
               style={{ width: 32, height: 32, borderRadius: "50%" }}
             />
             <Dropdown options={dropdownOptions} />
-          </div>
-          <div
+          </a>
+          <a
             className={styles.navItem}
             style={{ borderLeft: "0.5px solid #ccc" }}
           >
@@ -143,11 +144,11 @@ export default function Header() {
               For Business
               <IoMdArrowDropdown />
             </div>
-          </div>
+          </a>
           <div className={styles.navItem}>
-            <p>
+            <a href="#" style={{ textAlign: "center" }}>
               Buy Premium <br /> 50% off
-            </p>
+            </a>
           </div>
         </div>
       </nav>

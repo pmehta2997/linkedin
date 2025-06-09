@@ -17,7 +17,10 @@ const Dropdown: React.FC<DropdownProps> = ({ options }) => {
 
   return (
     <div className={styles.dropdown}>
-      <button onClick={() => setIsOpen(!isOpen)} style={{ display: "flex" }}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        style={{ display: "flex", cursor: "pointer" }}
+      >
         Me <IoMdArrowDropdown />
       </button>
 

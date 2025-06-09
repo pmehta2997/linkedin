@@ -8,22 +8,27 @@ export default function CreatePostBox() {
   return (
     <div className={styles.createPostBox}>
       <div className={styles.profileInput}>
-        <img
-          src={Image.src}
-          alt="Me"
-          style={{ width: 34, height: 34, borderRadius: "50%" }}
-        />
+        <img src={Image.src} alt="Me" className={styles.profileImage} />
         <input placeholder="Start a post" className={styles.postInput} />
       </div>
       <div className={styles.buttonGroup}>
-        <button className={styles.video}>
-          <FaVideo /> Video
+        <button className={styles.button}>
+          <i className={styles.icon}>
+            <FaVideo />
+          </i>
+          <span className={styles.iconText}>Video</span>
         </button>
-        <button className={styles.photo}>
-          <IoMdPhotos /> Photo
+        <button className={styles.button}>
+          <i className={styles.icon}>
+            <IoMdPhotos />
+          </i>
+          <span className={styles.iconText}>Photo</span>
         </button>
-        <button className={styles.article}>
-          <MdOutlineArticle /> Write article
+        <button className={styles.button}>
+          <i className={styles.icon}>
+            <MdOutlineArticle />
+          </i>
+          <span className={styles.iconText}>Write article</span>
         </button>
       </div>
     </div>

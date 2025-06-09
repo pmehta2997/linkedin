@@ -1,21 +1,10 @@
 .Leftsidebar {
-    width: 25%;
+    width: 21%;
     padding: 1rem;
-    border-radius: 12px;
+    border-radius: 10px;
 }
-
-.Leftsidebarlinkitem {
-    font-size: 0.9rem;
-    color: #374151;
-    margin-bottom: 0.5rem;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.Leftsidebarlinkitem:hover {
-    text-decoration: underline;
-    color: #2563eb;
-
+.sidebarlinkitem{
+    padding: 1rem;
 }
 @media screen and (max-width: 768px) {
     .rightIcons {
