@@ -20,7 +20,7 @@
 .logo {
   width: 44px;
   height: 44px;
-  border-radius: 20%;
+  border-radius: 5px;
 }
 
 .searchInput {
@@ -179,8 +179,8 @@
     font-size: 14px;
 }
 .sidebar {
-    width: 25%;  
-    border-radius: 12px;
+    width: 28%;  
+    border-radius: 10px;
     margin-top: 1rem;
 }
 .buttonGroup {
@@ -255,10 +255,11 @@
 .title {
     font-weight: bold;
     margin-bottom: 0.5rem;
+    font-size: 1.5rem;
 }
 
 .newsItem {
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: #2d3748;
     margin-bottom: 0.25rem;
 }
@@ -286,7 +287,7 @@
     padding-left: 5px;
     width: 25px;
     height: 25px;
-    border-radius: 20%;
+    border-radius: 5px;
 }
     .searchInput {
         display: none;

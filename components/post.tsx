@@ -1,5 +1,6 @@
 import styles from "@/styles/page.module.css";
 import images from "@/images/s1.jpg";
+import image2 from "@/images/s3.jpg";
 import PostReaction from "@/components/postReaction";
 
 export default function Post() {
@@ -16,6 +17,8 @@ export default function Post() {
         Marshmallows, spaghetti, and a whole lot of teamwork!
       </p>
       <img src={images.src} alt="Post" className={styles.postImage} />
+      <br />
+      <img src={image2.src} alt="Post" className={styles.postImage} />
       <PostReaction />
     </div>
   );

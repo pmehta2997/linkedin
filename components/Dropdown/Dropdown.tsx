@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "@/components/Dropdown/Dropdown.module.css";
 import { IoMdArrowDropdown } from "react-icons/io";
 
@@ -14,9 +14,22 @@ interface DropdownProps {
 
 const Dropdown: React.FC<DropdownProps> = ({ options }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      dropdownRef.current;
+      setIsOpen(false);
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div className={styles.dropdown}>
+    <div ref={dropdownRef} className={styles.dropdown}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         style={{ display: "flex", cursor: "pointer" }}

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import styles from "@/styles/page.module.css";
 import { IoHome } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
@@ -46,6 +46,11 @@ export default function Header() {
       ],
     },
   ];
+  const [searchTerm, setSearchTerm] = useState("");
+  const handleSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    // console.log("clicked", e.target.value);
+    setSearchTerm(e.target.value);
+  }, []);
 
   return (
     <header className={styles.header}>
@@ -60,6 +65,8 @@ export default function Header() {
             type="text"
             className={styles.searchInput}
             placeholder="Search"
+            value={searchTerm}
+            onChange={handleSearch}
           />{" "}
         </div>
         <span className={styles.searchicon}>
