@@ -15,8 +15,16 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import profilepic from "@/images/i1.jpg";
 import Dropdown from "@/components/Dropdown/Dropdown";
 import Dropdownstyle from "@/components/Dropdown/Dropdown.module.css";
+import Homepage from "@/components/Home/Homepage";
+import ImageGallery from "@/components/ImageGallery/imageGallery";
 
-export default function Header() {
+interface HeaderProps {
+  onMenuSelect: (menu: MenuItem) => void;
+}
+
+type MenuItem = "home" | "MyNetwork" | "ViewProfile" | null;
+
+export default function Header({ onMenuSelect }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const dropdownOptions = [
     {
@@ -75,14 +83,17 @@ export default function Header() {
       </div>
 
       <nav className={styles.nav}>
-        <a href="#" className={`${styles.navItem} ${styles.active}`}>
+        <a
+          onClick={() => onMenuSelect("home")}
+          className={`${styles.navItem} ${styles.active}`}
+        >
           <Icon>
             <IoHome />
           </Icon>
           Home
         </a>
 
-        <a className={styles.navItem}>
+        <a onClick={() => onMenuSelect("MyNetwork")} className={styles.navItem}>
           <Icon>
             <FaUserFriends />
           </Icon>

@@ -17,6 +17,9 @@ import styles from "@/styles/page.module.css";
 import Linksidebar from "@/components/linksSidebar/linksSidebar.module.css";
 import NewsCard from "@/components/NewsCard";
 import Header from "@/components/header";
+import Imagegallery from "@/components/ImageGallery/imageGallery";
+import Homepage from "@/components/Home/Homepage";
+import ContentPage from "@/components/Profilepage/ContentPage";
 
 interface User {
   name: string;
@@ -30,6 +33,7 @@ interface UserContextType {
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
+type MenuItem = "home" | "MyNetwork" | "ViewProfile" | null;
 
 export const useUser = () => {
   const context = useContext(UserContext);
@@ -44,25 +48,26 @@ export default function Home() {
     profilePic: Image.src,
     jobTitle: "DotNet Developer",
   });
+  const [selectedMenuItem, setSelectedMenuItem] = useState<MenuItem>(null);
 
+  const renderComponent = () => {
+    switch (selectedMenuItem) {
+      case "home":
+        return <Homepage />;
+      case "MyNetwork":
+        return <Imagegallery />;
+      case "ViewProfile":
+        return <ContentPage />;
+      default:
+        return <Homepage />;
+    }
+  };
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <Header />
-      <div className={styles.container}>
-        <div className={Linksidebar.Leftsidebar}>
-          <ProfileIntro />
-          <Analysis />
-          <LinksSidebar />
-        </div>
-
-        <div className={styles.mainFeed}>
-          <CreatePost />
-          <Post />
-        </div>
-
-        <div className={styles.sidebar}>
-          <NewsCard />
-        </div>
+      <Header onMenuSelect={setSelectedMenuItem} />
+      <div>{renderComponent()}</div>
+      <div style={{ backgroundColor: "#f5f3ef" }}>
+        <ContentPage />
       </div>
     </UserContext.Provider>
   );

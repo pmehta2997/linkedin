@@ -10,16 +10,21 @@ interface DropdownOption {
 
 interface DropdownProps {
   options: DropdownOption[];
+  onItemClick?: (label: string) => void;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ options }) => {
+const Dropdown: React.FC<DropdownProps> = ({ options, onItemClick }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      dropdownRef.current;
-      setIsOpen(false);
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -55,7 +60,11 @@ const Dropdown: React.FC<DropdownProps> = ({ options }) => {
               )}
               <ul>
                 {section.items.map((item, idx) => (
-                  <li key={idx} className={styles.dropdownitem}>
+                  <li
+                    key={idx}
+                    className={styles.dropdownitem}
+                    onClick={() => onItemClick?.(item.label)}
+                  >
                     <a href={item.href || "#"}>{item.label}</a>
                   </li>
                 ))}
